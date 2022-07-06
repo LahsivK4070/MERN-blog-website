@@ -1,0 +1,41 @@
+.tags-input-container{
+    border: none;
+    border-bottom: 0.1rem solid rgb(198, 198, 198);
+    padding: .5em;
+    border-radius: 3px;
+    width: min(80vw, 40rem);
+    margin-top: 1em;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: .5em;
+}
+
+.tag-item{
+    background-color: rgb(218, 216, 216);
+    display: inline-block;
+    padding: .5em .75em;
+    border-radius: 1.5rem;
+}
+
+.tag-item .close{
+    height: 1.5rem;
+    width: 1.5rem;
+    background-color: rgb(48, 48, 48);
+    color: #fff;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: .5rem;
+    font-size: 1.25rem;
+    cursor: pointer;
+}
+
+.tags-input{
+    flex-grow: 1;
+    padding: .5rem 0;
+    border: none;
+    outline: none;
+    font-size: 1.25rem;
+}
