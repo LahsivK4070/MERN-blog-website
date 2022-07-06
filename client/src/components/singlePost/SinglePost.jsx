@@ -32,7 +32,7 @@ const SinglePost = () => {
 
   const handleDelete = async () => {
     try {
-      await axios.delete("api/posts/" + path, { data: { userName: user.userName } });
+      await axios.delete("/api/posts/" + path, { data: { userName: user.userName } });
       window.location.replace("/");  
     } catch (error) {
       console.log(error);
@@ -41,7 +41,7 @@ const SinglePost = () => {
 
   const handleUpdate = async () => {
     try {
-      await axios.put("api/posts/" + path, { userName: user.userName, title, desc });
+      await axios.put("/api/posts/" + path, { userName: user.userName, title, desc });
       setUpdateMode(false);
     } catch (error) {
       console.log(error);
