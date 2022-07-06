@@ -13,7 +13,7 @@ const Settings = () => {
   const [password, setPassword] = useState("");
   const [success, setSuccess] = useState(false);
 
-  const PF = "images/";
+  const PF = "http://localhost:5000/images/";
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -31,13 +31,13 @@ const Settings = () => {
       data.append("file", file);
       updatedUser.profilePic = fileName;
       try {
-        await axios.post("api/upload/", data);
+        await axios.post("http://localhost:5000/api/upload/", data);
       } catch (error) {
         // TO DO
       }
     }
     try {
-      const res = await axios.put("api/user/" + user._id, updatedUser);
+      const res = await axios.put("http://localhost:5000/api/user/" + user._id, updatedUser);
       setSuccess(true);
       dispatch({type: "UPDATE_SUCCESS", payload: res.data})
     } catch (error) {
@@ -47,13 +47,13 @@ const Settings = () => {
 
   const handleDelete = async () => {
     try {
-      await axios.delete("posts/?user=" + user.userName);
-      await axios.delete("api/user/" + user._id, { data: { userId: user._id } });
+      await axios.delete("http://localhost:5000/api/posts/?user=" + user.userName);
+      await axios.delete("http://localhost:5000/api/user/" + user._id, { data: { userId: user._id } });
       localStorage.setItem("user", null);
       window.location.replace("/");
       alert("Account deleted successfully");
     } catch (error) {
-      // 
+      console.log(error);
     }
   }
 

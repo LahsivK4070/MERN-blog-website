@@ -7,7 +7,7 @@ import { Context } from "../../context/Context";
 const Navbar = () => {
   const { user, dispatch } = useContext(Context);
 
-  const PF = "images/";
+  const PF = "http://localhost:5000/images/";
 
   const handleLogout = () => {
     dispatch({ type: "LOGOUT" });

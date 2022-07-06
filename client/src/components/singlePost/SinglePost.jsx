@@ -13,8 +13,8 @@ const SinglePost = () => {
   const location = useLocation();
   const path = location.pathname.split("/")[2];
   const [post, setPost] = useState({});
-  const url = "api/posts/";
-  const PF = "images/";
+  const url = "http://localhost:5000/api/posts/";
+  const PF = "http://localhost:5000/images/";
   const { user } = useContext(Context);
   const [title, setTitle] = useState();
   const [desc, setDesc] = useState("");
@@ -32,19 +32,19 @@ const SinglePost = () => {
 
   const handleDelete = async () => {
     try {
-      await axios.delete("api/posts/" + path, { data: { userName: user.userName } });
+      await axios.delete("http://localhost:5000/api/posts/" + path, { data: { userName: user.userName } });
       window.location.replace("/");  
     } catch (error) {
-      
+      console.log(error);
     }
   }
 
   const handleUpdate = async () => {
     try {
-      await axios.put("api/posts/" + path, { userName: user.userName, title, desc });
+      await axios.put("http://localhost:5000/api/posts/" + path, { userName: user.userName, title, desc });
       setUpdateMode(false);
     } catch (error) {
-      // console.log(error);
+      console.log(error);
     } 
   }
 

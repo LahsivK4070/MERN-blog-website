@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./post.css";
 
 const Post = ({ post }) => {
-  const PF = "images/";
+  const PF = "http://localhost:5000/images/";
   return (
     <div className='post'>
       { post.photo && (<img src={PF + post.photo} alt='post-img' />) }
