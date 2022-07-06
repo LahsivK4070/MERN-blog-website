@@ -35,7 +35,7 @@ const SinglePost = () => {
       await axios.delete("api/posts/" + path, { data: { userName: user.userName } });
       window.location.replace("/");  
     } catch (error) {
-      console.log(error);
+      
     }
   }
 
@@ -44,7 +44,7 @@ const SinglePost = () => {
       await axios.put("api/posts/" + path, { userName: user.userName, title, desc });
       setUpdateMode(false);
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     } 
   }
 

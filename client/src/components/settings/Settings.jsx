@@ -53,7 +53,7 @@ const Settings = () => {
       window.location.replace("/");
       alert("Account deleted successfully");
     } catch (error) {
-      console.log(error);
+      // 
     }
   }
 
