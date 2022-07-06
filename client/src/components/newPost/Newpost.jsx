@@ -30,7 +30,7 @@ const Newpost = () => {
         };
 
         try {
-          const res = await axios.post("http://localhost:5000/api/categories/", tag);
+          const res = await axios.post("api/categories/", tag);
         } catch (error) {
           
         }
@@ -42,13 +42,13 @@ const Newpost = () => {
         data.append("file", file);
         newPost.photo = fileName;
         try {
-          await axios.post("http://localhost:5000/api/upload/", data);
+          await axios.post("api/upload/", data);
         } catch (error) {
           // TO DO
         }
       }
       try {
-        const res = await axios.post("http://localhost:5000/api/posts/", newPost);
+        const res = await axios.post("api/posts/", newPost);
         window.location.replace("/post/" + res.data._id);
       } catch (error) {
         // TO DO

@@ -19,12 +19,12 @@ function App() {
     <BrowserRouter>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/post/:postId" element={<DetailPost />} />
-        <Route path="/settings" element={user ? <SettingsPage /> : <Register />} />
-        <Route path="/login" element={user ? <Home /> : <Login />} />
-        <Route path="/register" element={user ? <Home /> : <Register />} />
-        <Route path="/write" element={user ? <NewPost /> : <Register />} />
+        <Route exact path="/" element={<Home />} />
+        <Route exact path="/post/:postId" element={<DetailPost />} />
+        <Route exact path="/settings" element={user ? <SettingsPage /> : <Register />} />
+        <Route exact path="/login" element={user ? <Home /> : <Login />} />
+        <Route exact path="/register" element={user ? <Home /> : <Register />} />
+        <Route exact path="/write" element={user ? <NewPost /> : <Register />} />
       </Routes>
     </BrowserRouter>
   );
