@@ -9,8 +9,6 @@ const categoryRoute = require("./routes/categories")
 const cors = require('cors');
 const path = require("path");
 
-const PORT = process.env.PORT || 5000;
-
 const app = express();
 app.use(cors());
 app.use(express.json());
@@ -53,6 +51,6 @@ if (process.env.NODE_ENV == "production") {
 	})
 }
 
-app.listen(PORT, () => {
-    console.log(`Server started on port ${PORT}`);
+app.listen(process.env.PORT || 3000, () => {
+    console.log(`Server started on port`);
 })
