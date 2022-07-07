@@ -30,7 +30,7 @@ const Newpost = () => {
         };
 
         try {
-          const res = await axios.post("api/categories/", tag);
+          await axios.post("api/categories/", tag);
         } catch (error) {
           
         }
@@ -42,7 +42,7 @@ const Newpost = () => {
         data.append("file", file);
         newPost.photo = fileName;
         try {
-          await axios.post("api/upload/", data);
+          await axios.post("/api/upload/", data);
         } catch (error) {
           // TO DO
         }

@@ -28,7 +28,7 @@ const Navbar = () => {
         user ? (
           <div className="right">
             <Link to="/settings" className='link'>
-              {!(PF + user.profilePic === "") ? <span style={{cursor: "pointer", fontWeight: "600", marginRight: "1rem"}}>Add Image</span> : <img src={PF + user.profilePic} alt='Add img' className='nav-img' />}
+              {user.profilePic ? <img src={PF + user.profilePic} alt='Add img' className='nav-img' /> : <span style={{cursor: "pointer", fontWeight: "600", marginRight: "1rem"}}>Add Image</span>}
               </Link>
               <p onClick={handleLogout}>Logout</p>
           </div>
