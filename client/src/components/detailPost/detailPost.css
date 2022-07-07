@@ -1,9 +1,0 @@
-.detail-post{
-    display: flex;
-}
-
-@media (max-width: 1060px) {
-    .detail-post{
-        display: block;
-    }
-}
